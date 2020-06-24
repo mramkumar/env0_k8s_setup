@@ -42,19 +42,19 @@ variable "image_id" {
 }
 
 variable "master_instance_type" {
-  type = String
+  type = string
   default = "t3.medium"
 }
 
 
 variable "worker_instance_type" {
-  type = String
+  type = string
   default = "t3.medium"
 }
 
 
 variable "bastion_instance_type" {
-  type = String
+  type = string
   default = "t2.micro"
 }
 
