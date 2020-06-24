@@ -40,3 +40,38 @@ variable "image_id" {
   type = string
   default = "ami-085925f297f89fce1"
 }
+
+variable "master_instance_type" {
+  type = String
+  default = "t3.medium"
+}
+
+
+variable "worker_instance_type" {
+  type = String
+  default = "t3.medium"
+}
+
+
+variable "bastion_instance_type" {
+  type = String
+  default = "t2.micro"
+}
+
+variable "master_instances" {
+  type = map
+  default = {
+  master-1 = us-east-1a
+  master-2 = us-east-1b
+  master-3 = us-east-1c
+  }
+}
+
+variable "worker_instances" {
+  type = map
+  default = {
+  worker-1 = us-east-1a
+  worker-2 = us-east-1b
+  worker-3 = us-east-1c
+  }
+}
