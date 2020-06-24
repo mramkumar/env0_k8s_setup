@@ -61,17 +61,17 @@ variable "bastion_instance_type" {
 variable "master_instances" {
   type = map
   default = {
-  master-1 = us-east-1a
-  master-2 = us-east-1b
-  master-3 = us-east-1c
+  master-1 = "us-east-1a"
+  master-2 = "us-east-1b"
+  master-3 = "us-east-1c"
   }
 }
 
 variable "worker_instances" {
   type = map
   default = {
-  worker-1 = us-east-1a
-  worker-2 = us-east-1b
-  worker-3 = us-east-1c
+  worker-1 = "us-east-1a"
+  worker-2 = "us-east-1b"
+  worker-3 = "us-east-1c"
   }
 }
