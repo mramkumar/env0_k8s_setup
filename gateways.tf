@@ -3,7 +3,7 @@ resource "aws_internet_gateway" "internet-gw" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-     Name = format("%s-%s-%s",var.environment_name,"igw")
+     Name = format("%s-%s",var.environment_name,"igw")
   }
 }
 
@@ -16,9 +16,9 @@ resource "aws_eip" "nat" {
 
 resource "aws_nat_gateway" "nat-gw" {
   allocation_id = aws_eip.nat.id
-  subnet_id     = element(aws_subnet.public_subnets.id,count.index)
+  subnet_id     = aws_subnet.public-subnets["us-east-1a"].id
 
   tags = {
-     Name = format("%s-%s-%s",var.environment_name,"ngw")
+     Name = format("%s-%s",var.environment_name,"ngw")
   }
 }
