@@ -1,5 +1,5 @@
 output "bastion-ip" {
-  value = aws_instance.z_bastion-host.public_ip
+  value = aws_instance.bastion-host.public_ip
 }
 
 output "private-key-output" {
