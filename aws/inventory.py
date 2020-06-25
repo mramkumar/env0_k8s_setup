@@ -43,8 +43,6 @@ def write_to_file():
 
     # bastion node
     f.write("[bastion]\n")
-    for ip in bastion:
-       f.write(ip + "\n")
 
     # master
     f.write("[kube-master]\n")
