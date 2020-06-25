@@ -1,1 +1,1 @@
-# Serverless Own K8s Cluster Deployment On AWS
+# Serverless Own K8s Cluster Deployment On Cloud
