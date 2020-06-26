@@ -1,6 +1,6 @@
 # run inventory script to create ansible inventory file with ec2 instance details
 resource "null_resource" "ansible_inventory" {
-  triggers = {
+  triggers     = {
     always_run = "${timestamp()}"
   }
 
