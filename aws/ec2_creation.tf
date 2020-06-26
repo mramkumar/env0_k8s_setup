@@ -1,6 +1,7 @@
 # create master node
 
 resource "aws_instance" "master" {
+  depends_on = [aws_route.associate-nat-gw]
   ami           = var.image_id
   instance_type = var.master_instance_type
   key_name = aws_key_pair.public-key.id
@@ -12,9 +13,9 @@ resource "aws_instance" "master" {
   }
 }
 
-
 # create worker node
 resource "aws_instance" "worker" {
+  depends_on = [aws_route.associate-nat-gw]
   ami           = var.image_id
   instance_type = var.worker_instance_type
   key_name = aws_key_pair.public-key.id
@@ -29,6 +30,7 @@ resource "aws_instance" "worker" {
 
 # create bastion ec2 instance
 resource "aws_instance" "bastion-host" {
+  depends_on  = [aws_route.associate-internet-gw]
   key_name               = aws_key_pair.public-key.key_name
   ami                    = var.image_id
   vpc_security_group_ids = [aws_security_group.bastion-sg.id]
