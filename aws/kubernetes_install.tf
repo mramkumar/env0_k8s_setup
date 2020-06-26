@@ -7,8 +7,11 @@ resource "null_resource" "ansible_inventory" {
   depends_on = [aws_instance.bastion-host,aws_instance.master,aws_instance.worker]
 
   provisioner "local-exec" {
-    command = "python inventory.py"
+    command = "sleep 120"     # wait for ec2 comes up
+  }
 
+  provisioner "local-exec" {
+    command = "python inventory.py"
   }
 }
 
